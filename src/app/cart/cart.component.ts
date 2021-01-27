@@ -12,8 +12,14 @@ import { CartService } from '../cart.service';
 })
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
+  checkoutFrorms = this.formBuilder.group({
+    name: '',
+    
+  })
 
-  constructor( private cartService: CartService ) { }
+  constructor( private cartService: CartService, 
+                      formBuilder:  FormBuilder,
+                       ) { }
 
   ngOnInit() {
   }
